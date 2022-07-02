@@ -2551,7 +2551,7 @@ static ssize_t lockdown_color_show(struct device *dev,
 	sprintf(buf,"%s\n","4231323435050501");
 	else
 	sprintf(buf,"%s\n",lcd_lockdown_info);
-	pr_info("lcd_lockdown_info : %s,buf:%d\n", lcd_lockdown_info,buf);
+	pr_info("lcd_lockdown_info : %s,buf:%s\n", lcd_lockdown_info,buf);
 	ret = strlen(buf) + 1;
 	return ret;
 }

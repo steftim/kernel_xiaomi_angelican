@@ -1585,11 +1585,11 @@ static int ion_debug_heap_show(struct seq_file *s, void *unused)
 	}
 
 	seq_puts(s, "----------------------------------------------------\n");
-	seq_printf(s, "%16.s %16zu\n", "num_of_alloc_bytes ",
+	seq_printf(s, "%16.s %16llu\n", "num_of_alloc_bytes ",
 		   heap->num_of_alloc_bytes);
-	seq_printf(s, "%16.s %16zu\n", "num_of_buffers ",
+	seq_printf(s, "%16.s %16llu\n", "num_of_buffers ",
 		   heap->num_of_buffers);
-	seq_printf(s, "%16.s %16zu\n", "alloc_bytes_wm ",
+	seq_printf(s, "%16.s %16llu\n", "alloc_bytes_wm ",
 		   heap->alloc_bytes_wm);
 	seq_puts(s, "----------------------------------------------------\n");
 

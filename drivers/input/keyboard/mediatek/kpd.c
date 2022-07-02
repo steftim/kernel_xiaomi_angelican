@@ -125,7 +125,7 @@ static ssize_t kpdpwr_reset_store(struct device_driver *ddri,
 		return -EINVAL;
 	}
 
-	pr_err("kpdpwr_reset_store kpdpwr_status = %d\n", kpdpwr_status);
+	pr_err("kpdpwr_reset_store kpdpwr_status = %ld\n", kpdpwr_status);
 	if(kpdpwr_status){
 		pr_err("enable LPRST\n");
 		pmic_set_register_value(PMIC_RG_PWRKEY_RST_EN, 0x01);

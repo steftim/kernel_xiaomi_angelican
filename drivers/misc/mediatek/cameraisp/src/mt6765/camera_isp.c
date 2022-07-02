@@ -8320,7 +8320,7 @@ static long ISP_ioctl(struct file *pFile, unsigned int Cmd, unsigned long Param)
 		break;
 	#ifdef ENABLE_KEEP_ION_HANDLE
 	case ISP_ION_IMPORT:
-		pr_devel("ISP_ION_IMPORT: %d\n", ISP_ION_IMPORT);
+		pr_devel("ISP_ION_IMPORT: %ld\n", ISP_ION_IMPORT);
 		if (copy_from_user(&IonNode, (void *)Param,
 		    sizeof(struct ISP_DEV_ION_NODE_STRUCT)) == 0) {
 			struct T_ION_TBL *ptbl = NULL;
@@ -8394,7 +8394,7 @@ static long ISP_ioctl(struct file *pFile, unsigned int Cmd, unsigned long Param)
 					pIon_client, IonNode.memID);
 			if (!handle) {
 				pr_info(
-					"ISP_ION_IMPORT: %d handle == NULL\n",
+					"ISP_ION_IMPORT: %ld handle == NULL\n",
 					ISP_ION_IMPORT);
 				Ret = -EFAULT;
 				break;
@@ -8686,7 +8686,7 @@ static long ISP_ioctl(struct file *pFile, unsigned int Cmd, unsigned long Param)
 		break;
 	}
 	case  ISP_SET_SEC_DAPC_REG:
-		pr_info("ISP_SET_SEC_DAPC_REG = %d\n", ISP_SET_SEC_DAPC_REG);
+		pr_info("ISP_SET_SEC_DAPC_REG = %ld\n", ISP_SET_SEC_DAPC_REG);
 		if (copy_from_user(
 		    Dapc_Reg,
 		    (void *)Param,
