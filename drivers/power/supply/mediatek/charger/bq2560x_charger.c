@@ -36,7 +36,7 @@
 #include "bq2560x_reg.h"
 #include "bq2560x.h"
 
-#if 1
+#if 0
 #undef pr_debug
 #define pr_debug pr_err
 #undef pr_info
