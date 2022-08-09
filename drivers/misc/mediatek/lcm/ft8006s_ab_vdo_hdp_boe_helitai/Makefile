@@ -15,7 +15,7 @@
 # Makefile for misc devices that really don't fit anywhere else.
 #
 
-obj-y += ft8006s_vdo_hdp_boe_helitai.o
+obj-y += ft8006s_ab_vdo_hdp_boe_helitai.o
 
 
 
