@@ -320,14 +320,12 @@ static void lcm_get_params(struct LCM_PARAMS *params)
 
 static void lcm_init_power(void)
 {
-	pr_info("[LCM]%s\n",__func__);
 	lcd_bl_en = 1;
 }
 
 
 static void lcm_suspend_power(void)
 {
-	pr_info("[LCM]%s\n",__func__);
 
 	disp_dts_gpio_select_state(DTS_GPIO_STATE_LCD_BIAS_ENN0);
 	MDELAY(2);
@@ -337,7 +335,6 @@ static void lcm_suspend_power(void)
 
 static void lcm_resume_power(void)
 {
-	pr_info("[LCM]%s\n",__func__);
 
 }
 
@@ -345,31 +342,18 @@ static void lcm_init(void)
 {
 	unsigned char cmd = 0x0;
 	unsigned char data = 0xFF;
-	int ret = 0;
 	disp_dts_gpio_select_state(DTS_GPIO_STATE_LCD_BIAS_ENP1);
 	MDELAY(2);
 	disp_dts_gpio_select_state(DTS_GPIO_STATE_LCD_BIAS_ENN1);
 	cmd = 0x00;
 	data = 0x13;
 
-	ret = tps65132_write_bytes(cmd, data);
-	if (ret < 0)
-		pr_debug("[LCM]nt36525b--tps6132--cmd=%0x--i2c write error--\n",
-				cmd);
-	else
-		pr_debug("[LCM]nt36525b--tps6132--cmd=%0x--i2c write success--\n",
-				cmd);
+	tps65132_write_bytes(cmd, data);
 
 	cmd = 0x01;
 	data = 0x13;
 
-	ret = tps65132_write_bytes(cmd, data);
-	if (ret < 0)
-		pr_debug("[LCM]nt36525b--tps6132--cmd=%0x--i2c write error--\n",
-				cmd);
-	else
-		pr_debug("[LCM]nt36525b--tps6132--cmd=%0x--i2c write success--\n",
-				cmd);
+	tps65132_write_bytes(cmd, data);
 
 	MDELAY(2);
 	MDELAY(9);
@@ -391,7 +375,6 @@ static void lcm_init(void)
 
 static void lcm_suspend(void)
 {
-	pr_info("[LCM]%s\n",__func__);
 	push_table(lcm_suspend_setting,
 		sizeof(lcm_suspend_setting) / sizeof(struct LCM_setting_table),
 			1);
@@ -399,7 +382,6 @@ static void lcm_suspend(void)
 
 static void lcm_resume(void)
 {
-	pr_info("[LCM]%s\n",__func__);
 	lcm_init();
 }
 
@@ -463,8 +445,6 @@ static unsigned int lcm_compare_id(void)
 	id1 = buffer[1];     /* we only need ID */
 	id2 = buffer[2];     /* we only need ID */
 
-	pr_info("[LCM]%s,nt36525b id0 = 0x%x,id1 = 0x%x, id2 = 0x%x\n",
-		 __func__, id0,id1,id2);
 	if(id0 == 0x00 && id1 == 0x80 && id2 == 0x00)
 		return 1;
 	else
@@ -486,10 +466,8 @@ static unsigned int lcm_esd_check(void)
 	read_reg_v2(0x0A, buffer, 1);
 
 	if (buffer[0] != 0x9C) {
-		pr_debug("[LCM][LCM ERROR] [0x0A]=0x%02x\n", buffer[0]);
 		return TRUE;
 	}
-	pr_debug("[LCM][LCM NORMAL] [0x0A]=0x%02x\n", buffer[0]);
 	return FALSE;
 #else
 	return FALSE;
@@ -512,8 +490,6 @@ static unsigned int lcm_ata_check(unsigned char *buffer)
 	unsigned int data_array[3];
 	unsigned char read_buf[4];
 
-	pr_debug("[LCM]ATA check size = 0x%x,0x%x,0x%x,0x%x\n",
-			x0_MSB, x0_LSB, x1_MSB, x1_LSB);
 	data_array[0] = 0x0005390A;	/* HS packet */
 	data_array[1] = (x1_MSB << 24) | (x0_LSB << 16) | (x0_MSB << 8) | 0x2a;
 	data_array[2] = (x1_LSB);
@@ -552,7 +528,6 @@ static unsigned int lcm_ata_check(unsigned char *buffer)
 static void lcm_setbacklight_cmdq(void *handle, unsigned int level)
 {
 
-	pr_info("[LCM]%s,nt36525b backlight: level = %d lcd_bl_en = %d\n", __func__, level,lcd_bl_en);
 	if((0 != level) && (level <= 14))
 		level = 14;
 	level = level*72/100;

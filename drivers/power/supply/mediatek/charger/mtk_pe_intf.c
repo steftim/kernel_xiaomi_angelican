@@ -449,7 +449,7 @@ int mtk_pe_start_algorithm(struct charger_manager *pinfo)
 	struct mtk_pe *pe = &pinfo->pe;
 
 	if (!pinfo->enable_hv_charging) {
-		chr_info("%s: hv charging is disabled\n", __func__);
+		// chr_info("%s: hv charging is disabled\n", __func__);
 		if (pe->is_connect) {
 			pe_leave(pinfo, true);
 			pe->to_check_chr_type = true;
@@ -458,12 +458,12 @@ int mtk_pe_start_algorithm(struct charger_manager *pinfo)
 	}
 
 	if (mtk_pe20_get_is_connect(pinfo)) {
-		chr_info("%s: stop, PE+20 is connected\n", __func__);
+		// chr_info("%s: stop, PE+20 is connected\n", __func__);
 		return ret;
 	}
 
 	if (!pe->is_enabled) {
-		chr_info("%s: stop, PE+ is disabled\n", __func__);
+		// chr_info("%s: stop, PE+ is disabled\n", __func__);
 		return ret;
 	}
 
@@ -471,7 +471,7 @@ int mtk_pe_start_algorithm(struct charger_manager *pinfo)
 	mutex_lock(&pe->access_lock);
 	__pm_stay_awake(&pe->suspend_lock);
 
-	chr_debug("%s: starts\n", __func__);
+	// chr_debug("%s: starts\n", __func__);
 
 	if (mt_get_charger_type() == CHARGER_UNKNOWN || pe->is_cable_out_occur)
 		mtk_pe_plugout_reset(pinfo);
@@ -479,15 +479,15 @@ int mtk_pe_start_algorithm(struct charger_manager *pinfo)
 	/* TA is not connected */
 	if (!pe->is_connect) {
 		ret = -EIO;
-		chr_info("%s: stop, PE+ is not connected\n", __func__);
+		// chr_info("%s: stop, PE+ is not connected\n", __func__);
 		goto _out;
 	}
 
 	/* No need to tune TA */
 	if (!pe->to_tune_ta_vchr) {
 		ret = pe_check_leave_status(pinfo);
-		chr_info("%s: stop, not to tune TA vchr\n",
-			__func__);
+		// chr_info("%s: stop, not to tune TA vchr\n",
+		//	__func__);
 		goto _out;
 	}
 
@@ -497,13 +497,13 @@ int mtk_pe_start_algorithm(struct charger_manager *pinfo)
 	if (pinfo->data.ta_9v_support || pinfo->data.ta_12v_support) {
 		ret = pe_increase_ta_vchr(pinfo, 9000000); /* uv */
 		if (ret < 0) {
-			chr_err("%s: failed, cannot increase to 9V\n",
-				__func__);
+			// chr_err("%s: failed, cannot increase to 9V\n",
+			//	__func__);
 			goto _err;
 		}
 
 		/* Successfully, increase to 9V */
-		chr_info("%s: output 9V ok\n", __func__);
+		// chr_info("%s: output 9V ok\n", __func__);
 
 	}
 
@@ -511,13 +511,13 @@ int mtk_pe_start_algorithm(struct charger_manager *pinfo)
 	if (pinfo->data.ta_12v_support) {
 		ret = pe_increase_ta_vchr(pinfo, 12000000); /* uv */
 		if (ret < 0) {
-			chr_err("%s: failed, cannot increase to 12V\n",
-				__func__);
+			// chr_err("%s: failed, cannot increase to 12V\n",
+			//	__func__);
 			goto _err;
 		}
 
 		/* Successfully, increase to 12V */
-		chr_info("%s: output 12V ok\n", __func__);
+		// chr_info("%s: output 12V ok\n", __func__);
 	}
 
 	chr_volt = pe_get_vbus();
@@ -525,9 +525,9 @@ int mtk_pe_start_algorithm(struct charger_manager *pinfo)
 	if (ret < 0)
 		goto _err;
 
-	chr_info("%s: vchr_org = %d, vchr_after = %d, delta = %d\n",
-		__func__, pe->ta_vchr_org / 1000, chr_volt / 1000,
-		(chr_volt - pe->ta_vchr_org) / 1000);
+	// chr_info("%s: vchr_org = %d, vchr_after = %d, delta = %d\n",
+	//	__func__, pe->ta_vchr_org / 1000, chr_volt / 1000,
+	//	(chr_volt - pe->ta_vchr_org) / 1000);
 	chr_info("%s: OK\n", __func__);
 
 	__pm_relax(&pe->suspend_lock);
@@ -538,9 +538,9 @@ _err:
 	pe_leave(pinfo, false);
 _out:
 	chr_volt = pe_get_vbus();
-	chr_info("%s: vchr_org = %d, vchr_after = %d, delta = %d\n",
-		__func__, pe->ta_vchr_org / 1000, chr_volt / 1000,
-		(chr_volt - pe->ta_vchr_org) / 1000);
+	// chr_info("%s: vchr_org = %d, vchr_after = %d, delta = %d\n",
+	//	__func__, pe->ta_vchr_org / 1000, chr_volt / 1000,
+	//	(chr_volt - pe->ta_vchr_org) / 1000);
 
 	__pm_relax(&pinfo->pe.suspend_lock);
 	mutex_unlock(&pinfo->pe.access_lock);
@@ -569,9 +569,9 @@ int mtk_pe_set_charging_current(struct charger_manager *pinfo,
 		*ichg = pinfo->data.ta_ac_charger_current;
 	}
 
-	chr_info("%s: Ichg= %dmA, AICR = %dmA, chr_org = %d, chr_after = %d\n",
-		__func__, *ichg / 1000, *aicr / 1000, pe->ta_vchr_org / 1000,
-		chr_volt / 1000);
+	// chr_info("%s: Ichg= %dmA, AICR = %dmA, chr_org = %d, chr_after = %d\n",
+	//	__func__, *ichg / 1000, *aicr / 1000, pe->ta_vchr_org / 1000,
+	//	chr_volt / 1000);
 	return ret;
 }
 
