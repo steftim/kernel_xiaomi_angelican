@@ -694,6 +694,7 @@ int mt_gpufreq_get_cur_ceiling_idx(void)
  */
 void mt_gpufreq_batt_oc_callback(BATTERY_OC_LEVEL battery_oc_level)
 {
+	return;
 	if (g_batt_oc_limited_ignore_state) {
 		gpufreq_pr_debug("@%s: ignore Over Currents(OC) protection\n",
 			__func__);
@@ -728,6 +729,7 @@ void mt_gpufreq_batt_oc_callback(BATTERY_OC_LEVEL battery_oc_level)
 void
 mt_gpufreq_batt_percent_callback(BATTERY_PERCENT_LEVEL battery_percent_level)
 {
+	return;
 	if (g_batt_percent_limited_ignore_state) {
 		gpufreq_pr_debug(
 			"@%s: ignore Battery Percentage protection\n",
@@ -767,6 +769,7 @@ mt_gpufreq_batt_percent_callback(BATTERY_PERCENT_LEVEL battery_percent_level)
  */
 void mt_gpufreq_low_batt_callback(LOW_BATTERY_LEVEL low_battery_level)
 {
+	return;
 	if (g_low_batt_limited_ignore_state) {
 		gpufreq_pr_debug(
 			"@%s: ignore Low Battery Volume protection\n",
@@ -861,7 +864,8 @@ void mt_gpufreq_set_power_limit_by_pbm(unsigned int limited_power)
 
 	mutex_lock(&mt_gpufreq_power_lock);
 
-	if (g_pbm_limited_ignore_state) {
+	//if (g_pbm_limited_ignore_state) {
+	if(1){
 		gpufreq_pr_debug("@%s: ignore PBM Power limited\n", __func__);
 		mutex_unlock(&mt_gpufreq_power_lock);
 		return;

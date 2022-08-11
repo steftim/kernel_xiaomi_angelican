@@ -41,17 +41,17 @@
 /**************************************************
  * MT6765 segment_3 : GPU DVFS OPP table Setting
  **************************************************/
-#define SEG3_GPU_DVFS_FREQ0			(860000)	/* KHz */
-#define SEG3_GPU_DVFS_FREQ1			(600000)	/* KHz */
-#define SEG3_GPU_DVFS_FREQ2			(550000)	/* KHz */
+#define SEG3_GPU_DVFS_FREQ0			(900000)	/* KHz */
+#define SEG3_GPU_DVFS_FREQ1			(680000)	/* KHz */
+#define SEG3_GPU_DVFS_FREQ2			(585000)	/* KHz */
 
-#define SEG3_GPU_DVFS_VOLT0			(79000)		/* mV x 100 */
-#define SEG3_GPU_DVFS_VOLT1			(68000)		/* mV x 100 */
-#define SEG3_GPU_DVFS_VOLT2			(63000)		/* mV x 100 */
+#define SEG3_GPU_DVFS_VOLT0			(77500)		/* mV x 100 */
+#define SEG3_GPU_DVFS_VOLT1			(59000)		/* mV x 100 */
+#define SEG3_GPU_DVFS_VOLT2			(50500)		/* mV x 100 */
 
-#define SEG3_GPU_DVFS_VSRAM0			(87500)		/* mV x 100 */
-#define SEG3_GPU_DVFS_VSRAM1			(87500)		/* mV x 100 */
-#define SEG3_GPU_DVFS_VSRAM2			(87500)		/* mV x 100 */
+#define SEG3_GPU_DVFS_VSRAM0			(88000)		/* mV x 100 */
+#define SEG3_GPU_DVFS_VSRAM1			(78000)		/* mV x 100 */
+#define SEG3_GPU_DVFS_VSRAM2			(78000)		/* mV x 100 */
 
 /**************************************************
  * MT6765T segment_4 : GPU DVFS OPP table Setting
