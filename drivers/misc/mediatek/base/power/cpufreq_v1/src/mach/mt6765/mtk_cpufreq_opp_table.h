@@ -337,11 +337,11 @@
 
 /* C65 */
 /* for DVFS OPP table L */
-#define CPU_DVFS_FREQ0_L_C65    2301000    /* KHz */
-#define CPU_DVFS_FREQ1_L_C65    2215000    /* KHz */
+#define CPU_DVFS_FREQ0_L_C65    2401000    /* KHz */
+#define CPU_DVFS_FREQ1_L_C65    2301000    /* KHz */
 #define CPU_DVFS_FREQ2_L_C65    2139000    /* KHz */
-#define CPU_DVFS_FREQ3_L_C65    2074000    /* KHz */
-#define CPU_DVFS_FREQ4_L_C65    2009000    /* KHz */
+#define CPU_DVFS_FREQ3_L_C65    2094000    /* KHz */
+#define CPU_DVFS_FREQ4_L_C65    2059000    /* KHz */
 #define CPU_DVFS_FREQ5_L_C65    1944000    /* KHz */
 #define CPU_DVFS_FREQ6_L_C65    1879000    /* KHz */
 #define CPU_DVFS_FREQ7_L_C65    1814000    /* KHz */
@@ -352,7 +352,7 @@
 #define CPU_DVFS_FREQ12_L_C65   1218000    /* KHz */
 #define CPU_DVFS_FREQ13_L_C65   1085000    /* KHz */
 #define CPU_DVFS_FREQ14_L_C65    979000    /* KHz */
-#define CPU_DVFS_FREQ15_L_C65    900000    /* KHz */
+#define CPU_DVFS_FREQ15_L_C65    400000    /* KHz */
 
 /* for DVFS OPP table LL */
 #define CPU_DVFS_FREQ0_LL_C65    1800000    /* KHz */
@@ -369,7 +369,7 @@
 #define CPU_DVFS_FREQ11_LL_C65    745000    /* KHz */
 #define CPU_DVFS_FREQ12_LL_C65    643000    /* KHz */
 #define CPU_DVFS_FREQ13_LL_C65    542000    /* KHz */
-#define CPU_DVFS_FREQ14_LL_C65    501000    /* KHz */
+#define CPU_DVFS_FREQ14_LL_C65    471000    /* KHz */
 #define CPU_DVFS_FREQ15_LL_C65    400000    /* KHz */
 
 /* for DVFS OPP table CCI */
@@ -387,47 +387,47 @@
 #define CPU_DVFS_FREQ11_CCI_C65    525000    /* KHz */
 #define CPU_DVFS_FREQ12_CCI_C65    459000    /* KHz */
 #define CPU_DVFS_FREQ13_CCI_C65    392000    /* KHz */
-#define CPU_DVFS_FREQ14_CCI_C65    339000    /* KHz */
-#define CPU_DVFS_FREQ15_CCI_C65    300000    /* KHz */
+#define CPU_DVFS_FREQ14_CCI_C65    359000    /* KHz */
+#define CPU_DVFS_FREQ15_CCI_C65    330000    /* KHz */
 
 /* for DVFS OPP table */
-#define CPU_DVFS_VOLT0_VPROC_L_C65    111875          /* 10uV */
-#define CPU_DVFS_VOLT1_VPROC_L_C65    106875          /* 10uV */
-#define CPU_DVFS_VOLT2_VPROC_L_C65    102500          /* 10uV */
-#define CPU_DVFS_VOLT3_VPROC_L_C65     98750          /* 10uV */
-#define CPU_DVFS_VOLT4_VPROC_L_C65     95000          /* 10uV */
-#define CPU_DVFS_VOLT5_VPROC_L_C65     91250          /* 10uV */
-#define CPU_DVFS_VOLT6_VPROC_L_C65     87500          /* 10uV */
-#define CPU_DVFS_VOLT7_VPROC_L_C65     83750          /* 10uV */
-#define CPU_DVFS_VOLT8_VPROC_L_C65     80000          /* 10uV */
-#define CPU_DVFS_VOLT9_VPROC_L_C65     76875          /* 10uV */
-#define CPU_DVFS_VOLT10_VPROC_L_C65    73750          /* 10uV */
-#define CPU_DVFS_VOLT11_VPROC_L_C65    70625          /* 10uV */
-#define CPU_DVFS_VOLT12_VPROC_L_C65    67500          /* 10uV */
-#define CPU_DVFS_VOLT13_VPROC_L_C65    64375          /* 10uV */
-#define CPU_DVFS_VOLT14_VPROC_L_C65    61875          /* 10uV */
+#define CPU_DVFS_VOLT0_VPROC_L_C65    101250          /* 10uV */
+#define CPU_DVFS_VOLT1_VPROC_L_C65    101250          /* 10uV */
+#define CPU_DVFS_VOLT2_VPROC_L_C65    97500          /* 10uV */
+#define CPU_DVFS_VOLT3_VPROC_L_C65     97500          /* 10uV */
+#define CPU_DVFS_VOLT4_VPROC_L_C65     97500          /* 10uV */
+#define CPU_DVFS_VOLT5_VPROC_L_C65     93125          /* 10uV */
+#define CPU_DVFS_VOLT6_VPROC_L_C65     90000          /* 10uV */
+#define CPU_DVFS_VOLT7_VPROC_L_C65     86875          /* 10uV */
+#define CPU_DVFS_VOLT8_VPROC_L_C65     85000          /* 10uV */
+#define CPU_DVFS_VOLT9_VPROC_L_C65     81250          /* 10uV */
+#define CPU_DVFS_VOLT10_VPROC_L_C65    77500          /* 10uV */
+#define CPU_DVFS_VOLT11_VPROC_L_C65    74375          /* 10uV */
+#define CPU_DVFS_VOLT12_VPROC_L_C65    70625          /* 10uV */
+#define CPU_DVFS_VOLT13_VPROC_L_C65    66250          /* 10uV */
+#define CPU_DVFS_VOLT14_VPROC_L_C65    63750          /* 10uV */
 #define CPU_DVFS_VOLT15_VPROC_L_C65    60000          /* 10uV */
 
-#define CPU_DVFS_VOLT0_VPROC_LL_C65    111875          /* 10uV */
-#define CPU_DVFS_VOLT1_VPROC_LL_C65    106875          /* 10uV */
-#define CPU_DVFS_VOLT2_VPROC_LL_C65    102500          /* 10uV */
-#define CPU_DVFS_VOLT3_VPROC_LL_C65     98750          /* 10uV */
-#define CPU_DVFS_VOLT4_VPROC_LL_C65     95000          /* 10uV */
-#define CPU_DVFS_VOLT5_VPROC_LL_C65     91250          /* 10uV */
-#define CPU_DVFS_VOLT6_VPROC_LL_C65     87500          /* 10uV */
-#define CPU_DVFS_VOLT7_VPROC_LL_C65     83750          /* 10uV */
-#define CPU_DVFS_VOLT8_VPROC_LL_C65     80000          /* 10uV */
-#define CPU_DVFS_VOLT9_VPROC_LL_C65     76875          /* 10uV */
-#define CPU_DVFS_VOLT10_VPROC_LL_C65    73750          /* 10uV */
-#define CPU_DVFS_VOLT11_VPROC_LL_C65    70625          /* 10uV */
-#define CPU_DVFS_VOLT12_VPROC_LL_C65    67500          /* 10uV */
-#define CPU_DVFS_VOLT13_VPROC_LL_C65    64375          /* 10uV */
-#define CPU_DVFS_VOLT14_VPROC_LL_C65    63125          /* 10uV */
-#define CPU_DVFS_VOLT15_VPROC_LL_C65    60000          /* 10uV */
+#define CPU_DVFS_VOLT0_VPROC_LL_C65    97500          /* 10uV */
+#define CPU_DVFS_VOLT1_VPROC_LL_C65    97500          /* 10uV */
+#define CPU_DVFS_VOLT2_VPROC_LL_C65    97500          /* 10uV */
+#define CPU_DVFS_VOLT3_VPROC_LL_C65     93750          /* 10uV */
+#define CPU_DVFS_VOLT4_VPROC_LL_C65     93750          /* 10uV */
+#define CPU_DVFS_VOLT5_VPROC_LL_C65     92500          /* 10uV */
+#define CPU_DVFS_VOLT6_VPROC_LL_C65     90625          /* 10uV */
+#define CPU_DVFS_VOLT7_VPROC_LL_C65     87500          /* 10uV */
+#define CPU_DVFS_VOLT8_VPROC_LL_C65     84375          /* 10uV */
+#define CPU_DVFS_VOLT9_VPROC_LL_C65     81250          /* 10uV */
+#define CPU_DVFS_VOLT10_VPROC_LL_C65    77500          /* 10uV */
+#define CPU_DVFS_VOLT11_VPROC_LL_C65    73750          /* 10uV */
+#define CPU_DVFS_VOLT12_VPROC_LL_C65    70625          /* 10uV */
+#define CPU_DVFS_VOLT13_VPROC_LL_C65    66875          /* 10uV */
+#define CPU_DVFS_VOLT14_VPROC_LL_C65    64375          /* 10uV */
+#define CPU_DVFS_VOLT15_VPROC_LL_C65    61875          /* 10uV */
 
-#define CPU_DVFS_VOLT0_VPROC_CCI_C65    111875          /* 10uV */
-#define CPU_DVFS_VOLT1_VPROC_CCI_C65    106875          /* 10uV */
-#define CPU_DVFS_VOLT2_VPROC_CCI_C65    102500          /* 10uV */
+#define CPU_DVFS_VOLT0_VPROC_CCI_C65    98750          /* 10uV */
+#define CPU_DVFS_VOLT1_VPROC_CCI_C65    98750          /* 10uV */
+#define CPU_DVFS_VOLT2_VPROC_CCI_C65    98750          /* 10uV */
 #define CPU_DVFS_VOLT3_VPROC_CCI_C65     98750          /* 10uV */
 #define CPU_DVFS_VOLT4_VPROC_CCI_C65     95000          /* 10uV */
 #define CPU_DVFS_VOLT5_VPROC_CCI_C65     91250          /* 10uV */
