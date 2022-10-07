@@ -11,12 +11,12 @@
  * See http://www.gnu.org/licenses/gpl-2.0.html for more details.
  */
 
-#include <helio-dvfsrc.h>
-#include <helio-dvfsrc-opp.h>
+#include "helio-dvfsrc.h"
+#include "helio-dvfsrc-opp.h"
 #ifdef CONFIG_MTK_QOS_FRAMEWORK
 #include <mtk_qos_ipi.h>
 #else
-#include <helio-dvfsrc-ipi.h>
+#include "helio-dvfsrc-ipi.h"
 #endif
 
 static struct opp_profile opp_table[VCORE_DVFS_OPP_NUM];

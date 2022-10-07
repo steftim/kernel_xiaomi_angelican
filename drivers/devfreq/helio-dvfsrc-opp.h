@@ -15,15 +15,15 @@
 #define __HELIO_DVFSRC_OPP_H
 
 #if defined(CONFIG_MACH_MT6765)
-#include <helio-dvfsrc-opp-mt6765.h>
+#include "helio-dvfsrc-opp-mt6765.h"
 #elif defined(CONFIG_MACH_MT6761)
-#include <helio-dvfsrc-opp-mt6761.h>
+#include "helio-dvfsrc-opp-mt6761.h"
 #elif defined(CONFIG_MACH_MT3967)
-#include <helio-dvfsrc-opp-mt3967.h>
+#include "helio-dvfsrc-opp-mt3967.h"
 #elif defined(CONFIG_MACH_MT6779)
-#include <helio-dvfsrc-opp-mt6779.h>
+#include "helio-dvfsrc-opp-mt6779.h"
 #else
-#include <helio-dvfsrc-opp-mt67xx.h>
+#include "helio-dvfsrc-opp-mt67xx.h"
 #endif
 
 struct opp_profile {

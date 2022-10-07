@@ -15,15 +15,15 @@
 #define __MTK_DVFSRC_REG_H
 
 #if defined(CONFIG_MACH_MT6765)
-#include <mtk_dvfsrc_reg_mt6765.h>
+#include "mtk_dvfsrc_reg_mt6765.h"
 #elif defined(CONFIG_MACH_MT6761)
-#include <mtk_dvfsrc_reg_mt6761.h>
+#include "mtk_dvfsrc_reg_mt6761.h"
 #elif defined(CONFIG_MACH_MT3967)
-#include <mtk_dvfsrc_reg_mt3967.h>
+#include "mtk_dvfsrc_reg_mt3967.h"
 #elif defined(CONFIG_MACH_MT6779)
-#include <mtk_dvfsrc_reg_mt6779.h>
+#include "mtk_dvfsrc_reg_mt6779.h"
 #else
-#include <mtk_dvfsrc_reg_mt67xx.h>
+#include "mtk_dvfsrc_reg_mt67xx.h"
 #endif
 
 

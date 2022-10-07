@@ -13,7 +13,7 @@
 
 #include <linux/kthread.h>
 
-#include <helio-dvfsrc-ipi.h>
+#include "helio-dvfsrc-ipi.h"
 
 #if defined(CONFIG_MTK_TINYSYS_SSPM_SUPPORT)
 static int qos_recv_thread(void *arg)
